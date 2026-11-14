@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Freshia by email, GitHub, or Facebook.">
+  <meta name="author" content="Freshia">
+  <meta property="og:title" content="Contact | Freshia">
+  <meta property="og:description" content="Contact Freshia by email, GitHub, or Facebook.">
+  <link rel="icon" href="capybara.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Rubik+Glitch&family=Bangers&display=swap" rel="stylesheet">
+  <title>Contact | Freshia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="about.css?v=9">
+  <link rel="stylesheet" href="contact.css?v=1">
+</head>
+<body class="dark-page about contact-page">
+  <main>
+    <section class="about-page" aria-labelledby="contact-title">
+      <!-- Decorative collage pieces -->
+      <div class="tear-v" aria-hidden="true"><img src="images/gray.png" alt=""></div>
+      <img class="deco strip-top" src="images/gray.png" alt="">
+      <img class="deco strip-bottom" src="images/gray.png" alt="">
+      <img class="deco paint-tl" src="images/paint.png" alt="">
+      <img class="deco paint-tr" src="images/paint.png" alt="">
+      <img class="deco scrap-tl" src="images/scrap.png" alt="">
+      <img class="deco paper-b" src="images/paper.png" alt="">
+      <img class="deco paper-r" src="images/paper.png" alt="">
+      <img class="deco dots-r" src="images/dots.png" alt="">
+      <img class="deco wire-w" src="images/wire-w.png" alt="">
+      <div class="about-tag" aria-hidden="true">Contact</div>
+      <img class="deco star-1" src="images/star.png" alt="">
+      <img class="deco wire-b" src="images/wire-b.png" alt="">
+      <img class="deco dots" src="images/dots.png" alt="">
+      <img class="deco paint-br" src="images/paint.png" alt="">
+      <img class="deco star-3" src="images/star.png" alt="">
+
+      <div class="about-wrap">
+        <div class="about-side">
+          <form class="contact-form" id="contact-form" aria-label="Send me a message">
+            <div>
+              <label for="cf-name">Your name:</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="cf-email">Your email:</label>
+              <input type="email" id="cf-email" name="email" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="cf-message">Message:</label>
+              <textarea id="cf-message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn-paper">Send message</button>
+          </form>
+
+          <nav class="side-nav" aria-label="Page links">
+            <a href="index.html" style="--r:-6deg">Home</a>
+            <a href="about.html" style="--r:3deg">About</a>
+            <a href="projects.html" style="--r:-4deg">Projects</a>
+          </nav>
+        </div>
+
+        <div class="about-text">
+          <p class="label">Contact</p>
+          <h1 id="contact-title">Let's talk</h1>
+          <p>Have a question or want to work together? Reach out.</p>
+
+          <ul class="contact-list">
+            <li><span>Email</span><a href="mailto:freshiapiquero@gmail.com">freshiapiquero@gmail.com</a></li>
+            <li><span>GitHub</span><a href="https://github.com/a-xiaa/FreshiaProfile" target="_blank" rel="noopener">github.com/a-xiaa</a></li>
+            <li><span>Facebook</span><a href="https://www.facebook.com/freshia.capy" target="_blank" rel="noopener">facebook.com/freshia.capy</a></li>
+            <!-- LinkedIn: palitan ang URL ng totoong profile mo, tapos tanggalin ang comment na ito.
+            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/TOTOONG-USERNAME" target="_blank" rel="noopener">linkedin.com/in/TOTOONG-USERNAME</a></li>
+            -->
+            <li><span>Location</span>Bacoor City, Cavite, Philippines</li>
+          </ul>
+
+          <a href="mailto:freshiapiquero@gmail.com" class="btn-paper">Send an email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>&copy; 2026 Freshia. Built with HTML and CSS. Capybara Artwork, Ltd.</p></footer>
+  <script>
+    // Opens the visitor's email app with the form filled in.
+    (function () {
+      var form = document.getElementById("contact-form");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var name = form.elements["name"].value.trim();
+        var email = form.elements["email"].value.trim();
+        var message = form.elements["message"].value.trim();
+        var body = message + "\n\n" + name + "\n" + email;
+        window.location.href = "mailto:freshiapiquero@gmail.com" +
+          "?subject=" + encodeURIComponent("Message from my portfolio") +
+          "&body=" + encodeURIComponent(body);
+      });
+    })();
+  </script>
+</body>
+</html>

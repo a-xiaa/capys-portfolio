@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Freshia, a Computer Science student at Cavite State University – Bacoor. Projects, certificates, and contact details.">
+  <meta name="author" content="Freshia">
+  <meta property="og:title" content="Freshia | Portfolio">
+  <meta property="og:description" content="Portfolio of Freshia, a Computer Science student at Cavite State University – Bacoor. Projects, certificates, and contact details.">
+  <link rel="icon" href="capybara.png">
+  <title>Freshia | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&family=Poppins:wght@400;500;600&family=Rubik+Glitch&family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css?v=5">
+</head>
+<body class="home">
+
+  <main>
+    <section class="collage" aria-label="Main page">
+      <video id="hero-video" class="face" autoplay muted loop playsinline aria-label="Video of Freshia">
+        <source src="media/me.mp4" type="video/mp4">
+      </video>
+      <div class="shade"></div>
+
+      <!-- Decorative collage pieces -->
+      <img class="deco strip-top" src="images/gray.png" alt="">
+      <img class="deco strip-bottom" src="images/gray.png" alt="">
+      <img class="deco paint-tl" src="images/paint.png" alt="">
+      <img class="deco paint-tr" src="images/paint.png" alt="">
+      <img class="deco paint-br" src="images/paint.png" alt="">
+      <img class="deco scrap-top" src="images/scrap.png" alt="">
+      <img class="deco pink-br" src="images/paper.png" alt="">
+      <img class="deco dots-r" src="images/dots.png" alt="">
+      <img class="deco wire-b2" src="images/wire-b.png" alt="">
+      <img class="deco dots" src="images/dots.png" alt="">
+      <img class="deco wire-w" src="images/wire-w.png" alt="">
+      <img class="deco wire-b" src="images/wire-b.png" alt="">
+      <img class="deco star-1" src="images/star.png" alt="">
+      <img class="deco star-2" src="images/star.png" alt="">
+      <img class="deco star-3" src="images/star.png" alt="">
+
+      <h1>Freshia's Portfolio</h1>
+      <p class="capy" aria-hidden="true">Capy</p>
+
+      <nav class="menu" aria-label="Main menu">
+        <a href="about.html" style="--r:-6deg">About</a>
+        <a href="projects.html" style="--r:4deg">Projects</a>
+        <a href="contact.html" style="--r:-3deg">Contact</a>
+      </nav>
+
+      <footer class="credit"><p>&copy; 2026 Freshia. Built with HTML and CSS. Capybara Artwork, Ltd.</p></footer>
+    </section>
+
+    <script>
+      // The video has its own sound. It starts muted (browsers require this for autoplay)
+      // and turns the sound on at the visitor's first tap, click, or key press.
+      (function () {
+        var video = document.getElementById("hero-video");
+        var events = ["pointerdown", "touchend", "keydown", "click"];
+        function soundOnFirstTouch() {
+          video.muted = false;
+          video.play().catch(function () {});
+          events.forEach(function (ev) { document.removeEventListener(ev, soundOnFirstTouch); });
+        }
+        events.forEach(function (ev) { document.addEventListener(ev, soundOnFirstTouch); });
+      })();
+    </script>
+  </main>
+</body>
+</html>

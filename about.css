@@ -1,0 +1,144 @@
+/* about.css: About page collage. Load AFTER style.css. Desktop layout at 861px+. */
+
+/* ---------- Film-frame photo (all sizes) ---------- */
+body.about .about-photo { background: #0b0b0b; aspect-ratio: 509 / 595; width: 100%; max-width: none; margin: 0; flex: none; }
+body.about .about-photo video {
+  inset: auto; left: 4.8%; top: 2.4%;
+  width: 90.6%; height: 95.2%;
+  object-position: 45% 30%;
+}
+body.about .about-photo .tear { display: none; }
+body.about .about-photo::before {            /* film text on the right edge */
+  content: "41   ▸   TRA 400";
+  position: absolute; right: 1%; top: 0; bottom: 0;
+  writing-mode: vertical-rl; text-align: center;
+  font: 500 .6rem/1.5 "Poppins", sans-serif; letter-spacing: .1em;
+  color: #f0a060; white-space: pre; display: flex; align-items: center; justify-content: center;
+}
+body.about .about-photo::after {             /* film triangles on the left edge */
+  content: "▼\A \A \A \A \A ▼\A \A \A \A \A ▼\A \A \A \A \A ▼";
+  position: absolute; left: .5%; top: 3%; width: 4%;
+  white-space: pre; text-align: center;
+  font-size: .55rem; line-height: 1.2; color: #f0a060;
+}
+
+/* Left column: photo + interests + page links */
+body.about .about-side { position: relative; z-index: 5; flex: 1 1 280px; width: 100%; max-width: 420px; margin: 1rem auto 0; }
+body.about .interests { margin-top: 2.5rem; }
+body.about .interests h2 {
+  margin: 0 0 1rem; font-family: "Rubik Glitch", Impact, sans-serif; text-transform: uppercase;
+  font-size: clamp(1.6rem, 2.6vw, 3rem); line-height: 1; color: #fff;
+}
+body.about .interests li {
+  margin: 0 0 .6rem; font: italic clamp(1.4rem, 2.6vw, 3rem)/1.15 "Bangers", Impact, sans-serif;
+  letter-spacing: .03em; text-transform: uppercase; color: #fff;
+  -webkit-text-stroke: 1.5px #111; paint-order: stroke fill; text-shadow: 2px 2px 0 #111;
+}
+body.about .side-nav { display: grid; justify-items: end; margin-top: 1.5rem; }
+body.about .side-nav a {
+  display: grid; place-items: center; width: min(15vw, 15rem); min-width: 170px; aspect-ratio: 900 / 345;
+  background: var(--scrap-img) center / 100% 100% no-repeat; text-decoration: none; text-transform: uppercase;
+  font: italic clamp(1.4rem, 2.6vw, 3rem)/1 "Bangers", Impact, sans-serif; letter-spacing: .05em;
+  color: #111; -webkit-text-stroke: 3px #fff; paint-order: stroke fill;
+  filter: drop-shadow(0 8px 10px rgba(0,0,0,.4)); transform: rotate(var(--r)); transition: transform .2s;
+}
+body.about .side-nav a + a { margin-top: -.4rem; margin-right: -.6vw; }
+body.about .side-nav a:hover, body.about .side-nav a:focus-visible { transform: rotate(0deg) scale(1.08); }
+body.about .side-nav a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+
+/* New collage pieces hidden on phones */
+.about-page .strip-top, .about-page .strip-bottom, .about-page .tear-v, .about-page .scrap-tl,
+.about-page .paper-b, .about-page .paper-r, .about-page .dots-r, .about-page .wire-w,
+.about-page .paint-tr, .about-tag { display: none; }
+
+@media (min-width: 861px) {
+  body.about .about-page { padding: 8.8vw 0 7vw; min-height: 100svh; }
+  body.about .about-page .strip-top, body.about .about-page .strip-bottom,
+  body.about .about-page .tear-v, body.about .about-page .scrap-tl,
+  body.about .about-page .paper-b, body.about .about-page .paper-r,
+  body.about .about-page .dots-r, body.about .about-page .wire-w,
+  body.about .about-page .paint-tr { display: block; }
+  body.about .about-tag { display: grid; }
+
+  /* torn gray strips */
+  body.about .about-page .strip-top    { z-index: 2; left: -3%; top: -1.5vw; width: 106%; height: 7.5vw; transform: none; }
+  body.about .about-page .strip-bottom { z-index: 2; left: -3%; bottom: -2vw; width: 106%; height: 10vw; transform: scaleY(-1); }
+  body.about .about-page .tear-v { position: absolute; z-index: 1; inset: 0; overflow: hidden; pointer-events: none; }
+  body.about .about-page .tear-v img {
+    position: absolute; left: 51%; top: 50%;
+    width: 250vh; height: 8vw; max-width: none;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  /* pink pieces */
+  body.about .about-page .paint-tl { z-index: 3; left: 29.5%; top: 3vw; width: 21vw; height: 17vw; transform: none; }
+  body.about .about-page .paint-tr { z-index: 3; right: -3%; top: -7vw; width: 17vw; transform: scaleX(-1); }
+  body.about .about-page .paint-br { z-index: 6; right: 6%; bottom: auto; top: 7vw; width: 8vw; height: 17vw; transform: none; }
+  body.about .about-page .scrap-tl { z-index: 4; left: -4vw; top: -3vw; width: 12vw; transform: rotate(70deg); }
+  body.about .about-page .paper-b  { z-index: 4; left: 16%; bottom: -8vw; width: 36vw; transform: rotate(-2deg); }
+  body.about .about-page .paper-r  { z-index: 4; right: -7vw; bottom: 6vw; width: 14vw; transform: rotate(80deg); }
+
+  /* dots */
+  body.about .about-page .dots   { z-index: 1; left: 0; bottom: 0; width: 14vw; opacity: .85; }
+  body.about .about-page .dots-r { z-index: 1; right: 0; bottom: 0; width: 22vw; opacity: .8; transform: scaleX(-1); }
+
+  /* stars + wires */
+  body.about .about-page .star-1 { z-index: 4; left: 57%; top: 2.6vw; width: 16vw; transform: rotate(15deg); }
+  body.about .about-page .star-3 { z-index: 3; left: 3%; right: auto; bottom: 7vw; top: auto; width: 8vw; transform: rotate(-10deg); }
+  body.about .about-page .wire-b { z-index: 6; left: 70%; top: 5.2vw; width: 30vw; transform: rotate(12deg); opacity: .9; }
+  body.about .about-page .wire-w { z-index: 3; left: -1vw; bottom: 15vw; width: 10vw; transform: rotate(5deg); }
+
+  /* ABOUT label */
+  body.about .about-tag {
+    position: absolute; z-index: 6; left: 4.6%; top: 7.3vw; width: 15.2vw; aspect-ratio: 900 / 345;
+    place-items: center; transform: rotate(-4deg);
+    background: var(--scrap-img) center / 100% 100% no-repeat;
+    font: italic 3.4vw/1 "Bangers", Impact, sans-serif; letter-spacing: .05em; text-transform: uppercase;
+    color: #111; -webkit-text-stroke: 3px #fff; paint-order: stroke fill;
+    filter: drop-shadow(0 8px 10px rgba(0,0,0,.4));
+    transition: transform .2s;
+  }
+  body.about .about-tag:hover { transform: rotate(0deg) scale(1.08); }
+
+  /* photo left, content box right */
+  body.about .about-wrap { max-width: none; padding: 0 7.3vw 0 11.4vw; gap: 0; justify-content: space-between; flex-wrap: nowrap; }
+  body.about .about-side { flex: 0 0 26.5vw; max-width: none; margin: 5.4vw 0 0; }
+  body.about .about-text {
+    flex: 0 0 34.5vw; padding: 3vw 2.6vw;
+    border-radius: 40px; background: rgba(15, 15, 15, .45);
+  }
+}
+
+/* Footer credit: sit right under the collage instead of far below */
+body.about footer { margin-top: 0; padding: 1.25rem 9% 1.75rem; border-top: 0; }
+
+/* Desktop: footer credit sits on top of the bottom gray strip, in black */
+@media (min-width: 861px) {
+  body.about footer {
+    position: relative; z-index: 10;
+    margin-top: -3.5vw; padding: 0 9%;
+    color: #111; font-weight: 600;
+  }
+}
+
+/* Interests: each one opens a popup (or a link) */
+body.about .int-btn {
+  display: inline-flex; align-items: baseline; gap: .7rem; padding: 0; border: 0; background: none; cursor: pointer;
+  font: inherit; letter-spacing: inherit; text-transform: inherit; text-align: left; text-decoration: none;
+  color: inherit; -webkit-text-stroke: inherit; text-shadow: inherit; paint-order: stroke fill;
+  transition: transform .2s;
+}
+body.about .int-btn::after {
+  content: "View"; font: 500 .75rem/1 "Poppins", sans-serif; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--pink); -webkit-text-stroke: 0; text-shadow: none; padding-bottom: .15rem; border-bottom: 2px solid currentColor;
+}
+body.about a.int-btn::after { content: "Open"; }
+body.about .int-btn:hover, body.about .int-btn:focus-visible { transform: translateX(6px) rotate(-1deg); }
+body.about .int-btn:focus-visible { outline: 3px solid #fff; outline-offset: 6px; }
+@media (prefers-reduced-motion: reduce) { body.about .int-btn { transition: none; } body.about .int-btn:hover { transform: none; } }
+
+/* Education: wider year column so ranges like "2022 - 2024" fit */
+body.about .about-text .edu { grid-template-columns: 8rem 1fr; }
+body.about .about-text .edu + .edu { margin-top: 1.25rem; }
+body.about .about-text .edu h3 { margin-top: 0; }
+@media (max-width: 600px) { body.about .about-text .edu { grid-template-columns: 1fr; } }

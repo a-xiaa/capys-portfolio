@@ -1,0 +1,29 @@
+/* viewer.css: shared popup viewer (Projects and About). Load AFTER style.css. */
+
+/* Close button */
+.lb-close {
+  position: absolute; top: -14px; right: -14px; width: 2.4rem; height: 2.4rem; border: 0; border-radius: 50%;
+  background: var(--pink); color: #111; font: 700 1.6rem/1 "DM Sans", sans-serif; cursor: pointer;
+}
+.lb-close:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* Popup box */
+.viewer-dialog { width: min(1000px, 94vw); max-height: 92vh; padding: 1rem 1.25rem 1.25rem; border: 2px solid rgba(255, 157, 185, .6); border-radius: 18px; background: #1c1819; color: #f3eaec; overflow-y: auto; }
+.viewer-dialog::backdrop { background: rgba(0, 0, 0, .82); }
+.viewer-dialog h2 { margin: 0 3rem .75rem 0; font-size: 1.2rem; color: #fff; }
+.viewer-dialog .lb-close { top: .75rem; right: .75rem; }
+#viewer-body iframe { display: block; width: 100%; height: min(70vh, 640px); border: 0; border-radius: 10px; background: #fff; }
+#viewer-body img { display: block; width: 100%; max-height: 70vh; object-fit: contain; border-radius: 10px; background: #fff; }
+#viewer-body .note { margin: .6rem 0 0; font-size: .85rem; color: #c9b8bd; }
+#viewer-body .note a { color: var(--pink); }
+
+#viewer-body video { display: block; width: auto; max-width: 100%; max-height: 70vh; margin: 0 auto; border-radius: 10px; background: #000; }
+#viewer-body .spotify-list { display: grid; gap: .75rem; }
+#viewer-body .spotify-list iframe { height: 152px; border-radius: 12px; background: transparent; }
+
+/* Movies and K-dramas: picture with the title below */
+#viewer-body .poster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1.25rem; align-items: start; margin: 0; padding: 0; }
+#viewer-body .poster-grid figure { margin: 0; }
+#viewer-body .poster-grid img { height: auto; max-height: none; object-fit: cover; }
+#viewer-body .poster-grid figcaption { margin-top: .5rem; font: 500 1rem/1.3 "Poppins", sans-serif; color: #fff; }
+#viewer-body .poster-grid figcaption small { display: block; margin-top: .1rem; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--pink); }

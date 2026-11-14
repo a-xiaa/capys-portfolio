@@ -1,0 +1,102 @@
+/* home.css: home page collage, matched to the design screenshot.
+   Load AFTER style.css. Desktop/tablet only (861px+); phones keep the layout from style.css. */
+
+/* Extra collage pieces are hidden on phones */
+.scrap-top, .dots-r, .wire-b2, .pink-br { display: none; }
+
+@media (min-width: 861px) {
+  body.home .scrap-top, body.home .dots-r,
+  body.home .wire-b2, body.home .pink-br { display: block; }
+  body.home .paint-br { display: none; }
+
+  /* video + overlay */
+  body.home .collage .face { top: 8%; height: 92%; object-position: 55% 30%; }
+  body.home .shade {
+    inset: 8% 0 0 0;
+    background: linear-gradient(90deg, rgba(20,10,15,.55), rgba(30,12,20,.25) 55%, rgba(20,10,15,.5));
+  }
+
+  /* layers */
+  body.home .deco { z-index: 4; }
+  body.home .scrap-top { z-index: 3; }
+  body.home .paint-tl, body.home .paint-tr, body.home .pink-br { z-index: 5; }
+  body.home .star-1, body.home .star-2, body.home .star-3,
+  body.home .wire-w, body.home .wire-b, body.home .wire-b2 { z-index: 6; }
+
+  /* torn gray strips */
+  body.home .strip-top    { left: 18%; top: -3.5%; width: 84%; transform: none; }
+  body.home .strip-bottom { left: -2%; bottom: -12%; width: 104%; transform: scaleY(-1); }
+  body.home .scrap-top    { left: 21%; top: -7%; width: 22%; }
+
+  /* pink paint + paper */
+  body.home .paint-tl { left: -8%; top: -13%; width: 32%; transform: none; }
+  body.home .paint-tr { right: -3%; top: -4%; width: 22%; transform: scaleX(-1); }
+  body.home .pink-br  { right: -8%; bottom: -24%; width: 52%; transform: rotate(-4deg); }
+
+  /* dots */
+  body.home .dots   { left: 0; bottom: 0; width: 22%; opacity: .85; z-index: 3; }
+  body.home .dots-r { right: 0; top: 48%; width: 20%; opacity: .5; transform: scaleX(-1); }
+
+  /* barbed wire */
+  body.home .wire-b  { left: 43.5%; top: -3.5%; width: 34%; transform: none; opacity: 1; }
+  body.home .wire-w  { left: -2%; top: 61%; bottom: auto; width: 32%; transform: rotate(8deg); }
+  body.home .wire-b2 { left: 33%; top: 83%; width: 18%; transform: rotate(15deg); }
+
+  /* stars */
+  body.home .star-1 { left: 6.7%; top: -.5%; width: 14%; transform: rotate(-8deg); }
+  body.home .star-2 { left: 14.5%; top: 65.5%; bottom: auto; width: 7.8%; transform: rotate(8deg); }
+  body.home .star-3 { left: 73%; right: auto; top: 70.5%; bottom: auto; width: 12.5%; transform: rotate(-8deg); }
+
+  /* title */
+  body.home .collage h1 {
+    z-index: 7;
+    left: 8.3%;
+    top: 31%;
+    max-width: 50%;
+    font-size: 7.2vw;
+    line-height: 1.12;
+    text-shadow: 0 4px 18px rgba(0,0,0,.45);
+  }
+
+  /* CAPY */
+  body.home .capy {
+    z-index: 7;
+    left: 46%;
+    top: 53.5%;
+    font-size: 6.4vw;
+    transform: rotate(-10deg);
+    color: rgba(107, 58, 71, .6);
+    -webkit-text-stroke: 3px var(--pink);
+    paint-order: stroke fill;
+    text-shadow: 3px 3px 0 rgba(255, 157, 185, .55);
+  }
+
+  /* menu: three torn pink papers on the right */
+  body.home .menu {
+    z-index: 8;
+    inset: 0;
+    width: auto;
+    display: block;
+    pointer-events: none;
+  }
+  body.home .menu a {
+    position: absolute;
+    pointer-events: auto;
+    aspect-ratio: auto;
+    font-size: clamp(1.8rem, 3.9vw, 4.4rem);
+    font-style: italic;
+    letter-spacing: .05em;
+    color: #111;
+    -webkit-text-stroke: 3px #fff;
+    paint-order: stroke fill;
+    text-shadow: 2px 2px 0 rgba(255,255,255,.9);
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,.45));
+  }
+  body.home .menu a:nth-child(1) { --r: -7deg; left: 65.6%; top: 14%;   width: 27%;   aspect-ratio: 900 / 345; background-image: var(--scrap-img); }
+  body.home .menu a:nth-child(2) { --r: 3deg;  left: 67.7%; top: 34%;   width: 27.5%; aspect-ratio: 900 / 345; background-image: var(--scrap-img); }
+  body.home .menu a:nth-child(3) { --r: -4deg; left: 68.5%; top: 53%;   width: 25%;   aspect-ratio: 900 / 345; background-image: var(--scrap-img); }
+  body.home .menu a:hover,
+  body.home .menu a:focus-visible { transform: rotate(0deg) scale(1.06); }
+
+  body.home .collage .credit { z-index: 9; }
+}

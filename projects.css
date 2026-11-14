@@ -1,0 +1,79 @@
+/* projects.css: Projects page extras. Load AFTER style.css and about.css. */
+
+body.projects-page .about-side { margin-top: 1rem; }
+@media (min-width: 861px) {
+  body.projects-page .about-side { margin-top: 5.4vw; }
+  body.projects-page .about-tag { font-size: 2.7vw; }
+}
+
+/* Certificates list (reuses the Interest list look) */
+body.projects-page .interests li span {
+  display: block; margin-top: .15rem;
+  font: 500 .95rem/1.4 "Poppins", sans-serif; letter-spacing: 0; text-transform: none;
+  -webkit-text-stroke: 0; text-shadow: none; color: #f3eaec;
+}
+
+/* Project entries inside the content box */
+body.projects-page .about-text h1 { font-size: clamp(1.6rem, 2.8vw, 2.6rem); text-transform: none; line-height: 1.15; margin-bottom: 1.5rem; }
+body.projects-page .proj { padding: 1.25rem 0; border-top: 2px solid rgba(255, 157, 185, .55); }
+body.projects-page .proj h3 {
+  margin: 0 0 .25rem; font: italic clamp(1.5rem, 2.2vw, 2.4rem)/1.1 "Bangers", Impact, sans-serif;
+  letter-spacing: .04em; text-transform: uppercase; color: #fff; text-shadow: 2px 2px 0 #111;
+}
+body.projects-page .proj span { display: block; margin-bottom: .5rem; color: var(--pink); font-size: .85rem; font-weight: 700; }
+body.projects-page .proj p { margin: 0; max-width: none; }
+
+/* Update plan */
+body.projects-page .plan-note { margin-top: 1rem; padding: 1.25rem 1.5rem; border-left: 8px solid var(--pink); border-radius: 0 20px 20px 0; background: rgba(255, 157, 185, .12); }
+body.projects-page .plan-note h3 { margin: 0 0 .5rem; font-family: "Poppins", sans-serif; font-size: 1.05rem; font-weight: 500; color: #fff; }
+body.projects-page .plan-note p { margin: 0; max-width: none; }
+
+/* Certificate: name + two separate pictures that open in a viewer */
+body.projects-page .interests li.cert { margin-bottom: 1.5rem; }
+body.projects-page .cert-pics { display: flex; align-items: flex-end; gap: 1rem; margin-top: .75rem; }
+body.projects-page .thumb {
+  margin: 0; padding: 0; border: 0; background: none; cursor: zoom-in; text-align: center;
+  transition: transform .2s;
+}
+body.projects-page .thumb img {
+  display: block; width: 100%; height: auto; border: 2px solid #fff; border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .45); background: #fff;
+}
+body.projects-page .thumb em {
+  display: block; margin-top: .35rem; font: 500 .8rem/1.2 "Poppins", sans-serif; font-style: normal;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--pink); -webkit-text-stroke: 0; text-shadow: none;
+}
+body.projects-page .thumb-badge { width: clamp(4.5rem, 6vw, 6.5rem); transform: rotate(-3deg); }
+body.projects-page .thumb-cert  { width: clamp(8rem, 11vw, 12rem); transform: rotate(2deg); }
+body.projects-page .thumb:hover, body.projects-page .thumb:focus-visible { transform: rotate(0deg) scale(1.06); }
+body.projects-page .thumb:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+
+/* Image viewer */
+.lightbox { position: fixed; border: 0; padding: 0; background: transparent; overflow: visible; max-width: 92vw; max-height: 92vh; }
+.lightbox::backdrop { background: rgba(0, 0, 0, .82); }
+.lightbox img { display: block; max-width: 92vw; max-height: 88vh; width: auto; height: auto; border: 4px solid #fff; border-radius: 12px; background: #fff; }
+/* "View" buttons on each project (torn pink paper) */
+body.projects-page .view-btn {
+  display: grid; place-items: center; width: 9.5rem; aspect-ratio: 900 / 342; margin-top: .9rem; padding: 0; border: 0; cursor: pointer;
+  background: url("images/scrap.png") center / 100% 100% no-repeat;
+  font: italic 1.2rem/1 "Bangers", Impact, sans-serif; letter-spacing: .05em; text-transform: uppercase;
+  color: #111; -webkit-text-stroke: 2px #fff; paint-order: stroke fill;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .4)); transform: rotate(-2deg); transition: transform .2s;
+}
+body.projects-page .view-btn:hover, body.projects-page .view-btn:focus-visible { transform: rotate(0deg) scale(1.06); }
+body.projects-page .view-btn:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) { body.projects-page .view-btn { transition: none; } }
+
+/* Update plan: sub-headings and lists */
+body.projects-page .plan-note h4 { margin: 1.1rem 0 .35rem; font: 500 .95rem/1.3 "Poppins", sans-serif; color: var(--pink); }
+body.projects-page .plan-note ul { margin: 0; padding-left: 1.25rem; list-style: disc; }
+body.projects-page .plan-note li { margin: 0 0 .3rem; }
+
+/* Page links sit in one row at the bottom */
+body.projects-page .bottom-nav { position: relative; z-index: 6; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem 2.5rem; margin: 3rem auto 0; }
+body.projects-page .bottom-nav a + a { margin: 0; }
+@media (min-width: 861px) { body.projects-page .about-page { padding-bottom: 14vw; } }
+
+/* Update plan sits under Certificates in the left column */
+body.projects-page .about-side .plan-note { margin-top: 2.5rem; }

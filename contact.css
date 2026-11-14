@@ -1,0 +1,36 @@
+/* contact.css: Contact page extras. Load AFTER style.css and about.css. */
+
+body.contact-page .about-side { margin-top: 1rem; }
+@media (min-width: 861px) {
+  body.contact-page .about-side { margin-top: 5.4vw; }
+  body.contact-page .about-tag { font-size: 3vw; }
+}
+
+body.contact-page .about-text h1 { font-size: clamp(1.8rem, 3.4vw, 3.2rem); margin-bottom: 1rem; }
+
+/* Contact details */
+body.contact-page .contact-list { margin: 1.5rem 0 0; border-top: 2px solid rgba(255, 157, 185, .55); }
+body.contact-page .contact-list li {
+  display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: .95rem 0;
+  border-bottom: 2px solid rgba(255, 157, 185, .55); color: #f3eaec; overflow-wrap: anywhere;
+}
+body.contact-page .contact-list span { color: var(--pink); font-size: .85rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+body.contact-page .contact-list a { color: #fff; }
+body.contact-page .contact-list a:hover, body.contact-page .contact-list a:focus-visible { color: var(--pink); }
+
+@media (max-width: 480px) {
+  body.contact-page .contact-list li { grid-template-columns: 1fr; gap: .15rem; }
+}
+
+/* Message form (replaces the video on this page) */
+body.contact-page .contact-form { position: relative; z-index: 5; display: grid; gap: 1.1rem; width: 100%; }
+body.contact-page .contact-form label { display: block; margin-bottom: .35rem; font: 600 1rem/1.2 "Poppins", sans-serif; color: #f3eaec; }
+body.contact-page .contact-form input,
+body.contact-page .contact-form textarea {
+  display: block; width: 100%; padding: .8rem 1rem; border: 3px solid #fff; border-radius: 6px;
+  background: #cfcbc6; color: #1b1b1b; font: 500 1rem/1.4 "Poppins", sans-serif;
+}
+body.contact-page .contact-form textarea { min-height: 9rem; resize: vertical; }
+body.contact-page .contact-form input:focus,
+body.contact-page .contact-form textarea:focus { outline: 3px solid var(--pink); outline-offset: 2px; background: #e8e4df; }
+body.contact-page .contact-form .btn-paper { justify-self: start; margin-top: .5rem; border: 0; cursor: pointer; }
